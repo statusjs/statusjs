@@ -14,6 +14,6 @@ function notify_test() {
 
     setTimeout(() => {
         notify_test();
-    }, Math.random() * 1000 * 5 + 5000);
+    }, Math.random() * 1000 * 5 + 1000);
 }
 notify_test();
