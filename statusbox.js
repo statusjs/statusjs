@@ -1,0 +1,38 @@
+function status_container_init() {
+    statuscontainer = document.getElementsByClassName("statuscontainer");
+    if (statuscontainer.length > 1) {
+        console.log("More than one statuscontainer found! Currently only one container is supported");
+    }
+    if (statuscontainer.length == 0) {
+        console.log("No element with class \"statuscontainer\" and \"status\" found!");
+    }
+}
+
+function status_style_init() {
+    // 
+    var head = document.getElementsByTagName('head')[0];
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = 'https://use.fontawesome.com/releases/v5.7.1/css/all.css';
+    link.media = 'all';
+    head.appendChild(link);
+    // 
+    var style = document.createElement("style");
+    style.innerHTML = ".status_container > div{margin-top:2rem;color:white;border-top-left-radius:1rem;border-top-right-radius:1rem;width:300px;height:75px;padding:0rem;display:block;position:relative;}";
+    style.innerHTML += ".status_container > *{color:white;}";
+    style.innerHTML += ".status_negative{background-color: #bb1e10;}";
+    style.innerHTML += ".status_positive{background-color: #2e9b20;}";
+    style.innerHTML += ".status_neutral{background-color: #999910;}";
+    style.innerHTML += ".status_timebar{transform:translateY(1rem);width:100%;height:1rem;position: absolute;bottom:0;left:0;border-bottom-left-radius:1rem;border-bottom-right-radius:1rem;}";
+    style.innerHTML += ".status_timebar>div{background-color: #dddddd;width:100%;height:1rem;position: absolute;bottom:0;left:0;border-bottom-left-radius:1rem;border-bottom-right-radius:1rem;}";
+    style.innerHTML += ".status_box_grid {display: grid;grid-template-columns: 2rem calc(100% - 2rem);grid-template-rows: 100%;grid-template-areas: 'status_icon status_text';text-align: center;height: 100%;width: calc(100% - 2rem);margin-left: 1rem;font-size: 1.25rem;}";
+    style.innerHTML += ".status_text {grid-area: status_text;}";
+    style.innerHTML += ".status_icon {grid-area: status_icon;}";
+    style.innerHTML += ".status_box_grid div {display: flex;justify-content: center;align-items: center;}";
+    style.innerHTML += "";
+    document.getElementsByTagName("body")[0].appendChild(style);
+}
+
+status_container_init();
+status_style_init();
