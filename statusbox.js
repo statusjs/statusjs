@@ -67,6 +67,7 @@ function status_notify(message, type = "neutral") {
     status_timebar.classList.add("status_timebar");
     var status_timebar_inner = document.createElement("div");
     status_timebar_inner.classList.add("status_timebar_inner");
+    status_timebar_inner.style.width = "100%";
 
     status_box_inner.appendChild(status_icon);
     status_box_inner.appendChild(status_text);
@@ -79,3 +80,18 @@ function status_notify(message, type = "neutral") {
         container.appendChild(notification);
     }
 }
+
+setInterval(() => {
+    var timebars = document.getElementsByClassName("status_timebar_inner");
+    for (let i = 0; i < timebars.length; i++) {
+        const bar = timebars[i];
+        var current_width = bar.style.width;
+        if (current_width == undefined) {
+            bar.style.width = "100%";
+        }
+        bar.style.width = (current_width.replace("%", "") - 0.1) + "%";
+        if (current_width.replace("%", "") <= 0) {
+            bar.parentElement.parentElement.remove();
+        }
+    }
+}, 15);
