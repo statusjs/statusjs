@@ -90,12 +90,12 @@ function status_notify(message, type = "neutral") {
 
 function status_remove(element_id) {
     element = document.getElementById(element_id);
-    element.style.transition = "10s";
+    element.style.transition = "1s";
     element.style.transform = "translateX(10rem)";
     element.style.filter = "opacity(0) blur(5px)";
     window.setTimeout(() => {
         element.remove();
-    }, 10 * 1000);
+    }, 1000);
 }
 
 setInterval(() => {
