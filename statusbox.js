@@ -78,6 +78,10 @@ function status_notify(message, type = "neutral") {
     status_timebar.appendChild(status_timebar_inner);
     notification.appendChild(status_timebar);
 
+    notification.addEventListener("click", (event) => {
+        status_remove(event.target.parentElement.parentElement.id);
+    });
+
     for (let i = 0; i < notify_containers.length; i++) {
         const container = notify_containers[i];
         container.prepend(notification);
