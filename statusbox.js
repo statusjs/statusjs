@@ -34,6 +34,8 @@ function status_style_init() {
 status_container_init();
 status_style_init();
 
+var notif_number = 0;
+
 function status_notify(message, type = "neutral") {
     if (!["negative", "positive", "neutral"].includes(type)) {
         console.log("Unknown type");
@@ -42,7 +44,8 @@ function status_notify(message, type = "neutral") {
     var notify_containers = document.getElementsByClassName("status_container");
     var notification = document.createElement("div");
     notification.classList.add("status_" + type);
-    notification.id = "status_box_" + document.getElementsByClassName("status_box_grid").length + 1;
+    notif_number++;
+    notification.id = "status_box_" + notif_number;
 
     var status_box_inner = document.createElement("div");
     status_box_inner.classList.add("status_box_grid");
