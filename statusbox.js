@@ -97,7 +97,7 @@ setInterval(() => {
         if (current_width == undefined) {
             bar.style.width = "100%";
         }
-        bar.style.width = (current_width.replace("%", "") - 0.1) + "%";
+        bar.style.width = (current_width.replace("%", "") - 0.25) + "%";
         if (current_width.replace("%", "") <= 0) {
             bar.parentElement.parentElement.remove();
         }
