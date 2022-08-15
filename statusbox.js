@@ -81,9 +81,9 @@ function status_notify(message, type = "neutral") {
     for (let i = 0; i < notify_containers.length; i++) {
         const container = notify_containers[i];
         container.prepend(notification);
-        bar = document.getElementById(notification.id);
+        notif = document.getElementById(notification.id);
         window.setTimeout(() => {
-            bar.style.borderBottomRightRadius = "1rem";
+            notif.style.borderBottomRightRadius = "1rem";
         }, 5);
     }
 }
