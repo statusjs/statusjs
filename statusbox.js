@@ -33,3 +33,49 @@ function status_style_init() {
 
 status_container_init();
 status_style_init();
+
+function status_notify(message, type = "neutral") {
+    if (!["negative", "positive", "neutral"].includes(type)) {
+        console.log("Unknown type");
+        return;
+    }
+    var notify_containers = document.getElementsByClassName("status_container");
+    var notification = document.createElement("div");
+    notification.classList.add("status_" + type);
+    notification.id = "status_box_" + document.getElementsByClassName("status_box_grid").length + 1;
+
+    var status_box_inner = document.createElement("div");
+    status_box_inner.classList.add("status_box_grid");
+
+    var status_icon = document.createElement("div");
+    switch (type) {
+        case "positive":
+            status_icon.innerHTML = '<i class="fas fa-check"></i>';
+            break;
+        case "neutral":
+            status_icon.innerHTML = '<i class="fas fa-info-circle"></i>';
+            break;
+        case "negative":
+            status_icon.innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
+            break;
+    }
+
+    var status_text = document.createElement("div");
+    status_text.innerText = message;
+
+    var status_timebar = document.createElement("div");
+    status_timebar.classList.add("status_timebar");
+    var status_timebar_inner = document.createElement("div");
+    status_timebar_inner.classList.add("status_timebar_inner");
+
+    status_box_inner.appendChild(status_icon);
+    status_box_inner.appendChild(status_text);
+    notification.appendChild(status_box_inner);
+    status_timebar.appendChild(status_timebar_inner);
+    notification.appendChild(status_timebar);
+
+    for (let i = 0; i < notify_containers.length; i++) {
+        const container = notify_containers[i];
+        container.appendChild(notification);
+    }
+}
