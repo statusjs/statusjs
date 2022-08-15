@@ -1,8 +1,5 @@
 function status_container_init() {
     statuscontainer = document.getElementsByClassName("statuscontainer");
-    if (statuscontainer.length > 1) {
-        console.log("More than one statuscontainer found! Currently only one container is supported");
-    }
     if (statuscontainer.length == 0) {
         console.log("No element with class \"statuscontainer\" and \"status\" found!");
     }
