@@ -89,6 +89,16 @@ function status_notify(message, type = "neutral") {
     }
 }
 
+function status_remove(element_id) {
+    element = document.getElementById(element_id);
+    element.style.transition = "10s";
+    element.style.transform = "translateX(10rem)";
+    element.style.filter = "opacity(0) blur(5px)";
+    window.setTimeout(() => {
+        element.remove();
+    }, 10 * 1000);
+}
+
 setInterval(() => {
     var timebars = document.getElementsByClassName("status_timebar_inner");
     for (let i = 0; i < timebars.length; i++) {
@@ -99,7 +109,7 @@ setInterval(() => {
         }
         bar.style.width = (current_width.replace("%", "") - 0.25) + "%";
         if (current_width.replace("%", "") <= 0) {
-            bar.parentElement.parentElement.remove();
+            status_remove(bar.parentElement.parentElement.id);
         }
     }
 }, 15);
