@@ -80,9 +80,8 @@ function status_notify(message, type = "neutral") {
 
     for (let i = 0; i < notify_containers.length; i++) {
         const container = notify_containers[i];
-        container.appendChild(notification);
+        container.prepend(notification);
         bar = document.getElementById(notification.id);
-        bar.style.transition = "3s";
         window.setTimeout(() => {
             bar.style.borderBottomRightRadius = "1rem";
         }, 5);
