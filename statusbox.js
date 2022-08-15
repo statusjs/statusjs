@@ -17,7 +17,7 @@ function status_style_init() {
     // 
     var style = document.createElement("style");
     style.innerHTML = ".status_container > div{margin-top:2rem;color:white;border-top-left-radius:1rem;border-top-right-radius:1rem;width:300px;height:75px;padding:0rem;display:block;position:relative;}";
-    style.innerHTML += ".status_container > *{color:white;}";
+    style.innerHTML += ".status_container > *{color:white; cursor: pointer;}";
     style.innerHTML += ".status_negative{background-color: #bb1e10;}";
     style.innerHTML += ".status_positive{background-color: #2e9b20;}";
     style.innerHTML += ".status_neutral{background-color: #999910;}";
