@@ -82,6 +82,7 @@ function status_notify(message, type = "neutral") {
         const container = notify_containers[i];
         container.prepend(notification);
         notif = document.getElementById(notification.id);
+        notif.style.transition = "2.5s";
         window.setTimeout(() => {
             notif.style.borderBottomRightRadius = "1rem";
         }, 5);
