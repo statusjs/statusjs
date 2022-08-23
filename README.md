@@ -1,4 +1,5 @@
 # Statusbox
+[![JSDelivr CDN](https://data.jsdelivr.com/v1/package/gh/cuzimbisonratte/status_box/badge?style=rounded)](https://www.jsdelivr.com/package/gh/cuzimbisonratte/status_box)
 
 # Implementation
 To implement statusbox, you just need to paste this snippet at the end of your HTML-Body:  
