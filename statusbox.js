@@ -1,7 +1,10 @@
+// Console styling variables
+const console_styling = "background-color:#fff;color:#000;border-radius:14px;";
+const console_prefix = "%c Statusbox %c";
+// Main class
 class StatusBox {
+    // StatusBox-Constructor
     constructor(options) {
-        const console_styling = "background-color:#fff;color:#000;border-radius:14px;";
-        const console_prefix = "%c Statusbox %c";
         // 
         // Options checks
         // 
