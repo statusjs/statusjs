@@ -22,6 +22,9 @@ class StatusBox {
             // Check if container element is given
             if (!options.container) {
                 console.warn(console_prefix + "Container parameter not given, using div with id \"statuscontainer\"!", console_styling);
+                this.container_id = "statuscontainer";
+            } else {
+                this.container_id = options.container;
             }
             if (!document.getElementById(options.container)) {
                 console.warn(console_prefix + "Container element couldn't be found!", console_styling);
@@ -29,7 +32,7 @@ class StatusBox {
             // Set class vars
             this.options = options;
             this.types = options.types;
-            this.container = document.getElementById(options.container);
+            this.container = document.getElementById(this.container_id);
         }
     }
 }
