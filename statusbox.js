@@ -22,7 +22,6 @@ class StatusBox {
             // Check if container element is given
             if (!options.container) {
                 console.warn(console_prefix + "Container parameter not given, using div with id \"statuscontainer\"!", console_styling);
-                options.container = "statuscontainer"
             }
             if (!document.getElementById(options.container)) {
                 console.warn(console_prefix + "Container element couldn't be found!", console_styling);
