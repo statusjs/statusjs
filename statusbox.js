@@ -26,8 +26,9 @@ class StatusBox {
             if (!document.getElementById(options.container)) {
                 console.warn(console_prefix + "Container element couldn't be found!", console_styling);
             }
-            // Set options to class var
+            // Set class vars
             this.options = options;
+            this.types = options.types;
             this.container = document.getElementById(options.container);
         }
     }
