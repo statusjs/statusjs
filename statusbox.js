@@ -15,7 +15,7 @@ class StatusBox {
             if (!options.position) {
                 console.warn("No position given! Putting the container on the right side.");
             } else {
-                if (!["L", "R"].includes(options.position.toString())) {
+                if (!["l", "r"].includes(options.position.toString().toLowerCase())) {
                     console.error(console_prefix + "Invalid position option given!", console_styling);
                 }
             }
